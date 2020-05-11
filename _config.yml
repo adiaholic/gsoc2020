@@ -6,5 +6,5 @@ twitter_username: BorikarAditya
 github_username:  adiaholic
 
 theme: minima
-plugins:
+gems:
   - jekyll-feed
