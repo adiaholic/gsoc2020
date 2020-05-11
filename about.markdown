@@ -6,5 +6,9 @@ author: Aditya Borikar
 ---
 
 I am a final year undergraduate student at Pune Institute of Computer Technology majoring in Information Technology, graduating in 2020.
+<br>
+With the guidance of my mentors and contributors at <a href="https://www.igniterealtime.org/"> IgniteRealtime </a>, I got an opportunity to be a part of <a href="https://xmpp.org/about/xmpp-standards-foundation.html">XMPP Standards Foundation<a href=""></a> through the annual <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> program. A brief overview of my GSoC project can be found <a href="https://summerofcode.withgoogle.com/projects/#4611553850032128"> here </a>.
+<br>
+This blog is a medium to track my progress, through weekly my posts.
 <br> <br>
-To know more, <a href="https://adiaholic.github.io/">click me!</a>.
+To know more about me, <a href="https://adiaholic.github.io/">click here!</a>.
