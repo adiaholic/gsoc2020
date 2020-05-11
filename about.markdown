@@ -4,10 +4,7 @@ title: About
 permalink: /about/
 author: Aditya Borikar
 ---
-<br>
-![alt text](gsoc.png "Title")
-<br>
-<img src="gsoc.png" alt="GSoC Logo">
+<img src="/assets/images/gsoc.png" alt="gsoc logo">
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;I am a final year undergraduate student at Pune Institute of Computer Technology majoring in Information Technology, India graduating in 2020.
 <br>
