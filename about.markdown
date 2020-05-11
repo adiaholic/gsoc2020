@@ -5,7 +5,7 @@ permalink: /about/
 author: Aditya Borikar
 ---
 <br>
-<img src="./images/gsoc.svg" alt="Flowers in Chania">
+<img src="./images/gsoc.png" alt="GSoC Logo">
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;I am a final year undergraduate student at Pune Institute of Computer Technology majoring in Information Technology, India graduating in 2020.
 <br>
