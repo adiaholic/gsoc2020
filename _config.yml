@@ -4,6 +4,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This is my awesome page to keep track of weekly gsoc progress.
 twitter_username: BorikarAditya
 github_username:  adiaholic
+linkedin: https://www.linkedin.com/in/aditya-borikar-7ba6b9127/
 
 theme: minima
 gems:
