@@ -17,7 +17,7 @@ The client is expected to initiate a websocket handshake by sending a HTTP GET u
 &emsp;If a client receives a handshake response that includes 'xmpp' in the 'Sec-WebSocket-Protocol' header, then the XMPP subprotocol webSocket connection was established successfully. In case the header is absent in the response, it means that the 'xmpp' subprotocol connection has failed and so the client must close the websocket connection immediately.</p>
 
 <p align="justify">
-&emsp;I am able to complete this handshake procedure against a local openfire server. I have provided below a screenshot of what it looks like,</p>
+&emsp;I am able to complete this handshake procedure against a local openfire server. I have provided below the headers sent and received during handshake,</p>
 <br>
   <center>
     <img src="https://adiaholic.github.io/gsoc2020/assets/images/Handshake.png">
