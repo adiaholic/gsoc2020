@@ -5,33 +5,30 @@ date:   2020-05-24 +0530
 author: Aditya Borikar
 ---
 
-Hi!
+Hi,
 <br>
-&emsp;It has been a week I have been working on preliminary websocket stuff.
+&emsp;It has been a week since I have been working on preliminary websocket stuff.
+
+<br><br>
+&emsp;The client is expected to initiate a websocket handshake by sending a HTTP GET upgrade request. During this, the client MUST include the value 'xmpp' in the list of protocols for the 'Sec-WebSocket-Protocol' header.
+
+&emsp;If a client receives a handshake response that does include 'xmpp' in the 'Sec-WebSocket-Protocol' header, then an XMPP subprotocol WebSocket connection was established successfully. In case the header is absent in the response, it means that the 'xmpp' subprotocol connection has failed and so the client must close the websocket connection.<br>
 
 <br>
-For a websocket handshake, client is expected to initiate by sending a HTTP GET upgrade request,<br>
+&emsp;I am able to complete this handshake procedure against a local openfire server. I have provided below a screenshot of what it looks like,
+<br>
 <br>
   <center>
     <img src="https://adiaholic.github.io/gsoc2020/assets/images/Handshake.png">
   </center>
 <br>
 <br>
-If a client receives a handshake response that does include 'xmpp' in the 'Sec-WebSocket-Protocol' header, then an XMPP subprotocol WebSocket connection was established successfully.<br>
-
+&emsp;But for this handshake to take place, we first need to discover the websocket connection endpoint for the server. For this we use <a href="https://tools.ietf.org/html/rfc7395#page-10"> RFC 7395, section 4 </a>.<br>
 <br>
-I am able to complete this handshake procedure against a local openfire server.<br>
+&emsp;Sending a request to  "/.well-known/host-meta" at an HTTP origin that matches the XMPP service domain. For eg: If the domain is example.org, we should send a request at the URL "https://example.org/.well-known/host-meta"<br>
 <br>
-But for this handshake to take place, we first need to discover the websocket connection endpoint for the server. For this we use <a href="https://tools.ietf.org/html/rfc7395#page-10"> RFC 7395, section 4 </a>.<br>
+&emsp;Server responds to this request and provides a websocket endpoint under "urn:xmpp:alt-connections:websocket" link relation. Servers MAY expose discovery information using host-meta documents, and clients MAY use such information to determine the WebSocket endpoint for a server.<br>
 <br>
-Sending a request to  "/.well-known/host-meta" at an HTTP origin that matches the XMPP service domain.<br>
-	For eg: If the domain is example.org, we should send a request at the URL "https://example.org/.well-known/host-meta"<br>
-<br>
-Server responds to this request and provides a websocket endpoint under "urn:xmpp:alt-connections:websocket" link relation<br>
-<br>
-
- Servers MAY expose discovery information using host-meta documents, and clients MAY use such information to determine the WebSocket endpoint for a server.<br>
-<br>
- As of now, my implementation fetches connection endpoint incase the endpoint isn't configured explicitly by the user inside `XMPPWebsocketConnectionConfiguration`. If user provides the websocket URL, we directly move on to sending the HTTP upgrade request as explained earlier in this blog.<br>
+&emsp; As of now, my implementation fetches connection endpoint in case the endpoint isn't configured explicitly by the user inside `XMPPWebsocketConnectionConfiguration`. If user provides websocket URL, we directly move on to sending the HTTP upgrade request as explained earlier in this blog.<br>
 <br>
 That is all for my current progress. Thank you for spending time and reading it!<br>
