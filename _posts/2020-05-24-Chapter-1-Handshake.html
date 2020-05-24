@@ -9,13 +9,12 @@ author: Aditya Borikar
 Hi,<br>
 &emsp;It has been a week since I have been working on preliminary websocket stuff.</p>
 
-<br>
 <p align="justify">
 &emsp;
 The client is expected to initiate a websocket handshake by sending a HTTP GET upgrade request. During this, the client MUST include the value 'xmpp' in the list of protocols for the 'Sec-WebSocket-Protocol' header.</p>
 
 <p align="justify">
-&emsp;If a client receives a handshake response that does include 'xmpp' in the 'Sec-WebSocket-Protocol' header, then an XMPP subprotocol WebSocket connection was established successfully. In case the header is absent in the response, it means that the 'xmpp' subprotocol connection has failed and so the client must close the websocket connection.</p>
+&emsp;If a client receives a handshake response that includes 'xmpp' in the 'Sec-WebSocket-Protocol' header, then the XMPP subprotocol webSocket connection was established successfully. In case the header is absent in the response, it means that the 'xmpp' subprotocol connection has failed and so the client must close the websocket connection immediately.</p>
 
 <p align="justify">
 &emsp;I am able to complete this handshake procedure against a local openfire server. I have provided below a screenshot of what it looks like,</p>
@@ -25,10 +24,10 @@ The client is expected to initiate a websocket handshake by sending a HTTP GET u
   </center>
 <br>
 <p align="justify">
-&emsp;But for this handshake to take place, we first need to discover the websocket connection endpoint for the server. For this we use <a href="https://tools.ietf.org/html/rfc7395#page-10"> RFC 7395, section 4 </a>.</p>
+&emsp;But for this handshake to take place, we first need to discover its websocket connection endpoint for the server. For this we use <a href="https://tools.ietf.org/html/rfc7395#page-10"> RFC 7395, section 4 </a>.</p>
 
 <p align="justify">
-&emsp;Sending a request to  "/.well-known/host-meta" at an HTTP origin that matches the XMPP service domain. For eg: If the domain is example.org, we should send a request at the URL "https://example.org/.well-known/host-meta".</p>
+&emsp;Sending a request to  "/.well-known/host-meta" at an HTTP origin that matches the XMPP service domain. For eg: If the domain is "example.org", we should send a request at the URL "https://example.org/.well-known/host-meta".</p>
 
 <p align="justify">
 &emsp;Server responds to this request and provides a websocket endpoint under "urn:xmpp:alt-connections:websocket" link relation. Servers MAY expose discovery information using host-meta documents, and clients MAY use such information to determine the WebSocket endpoint for a server.</p>
@@ -36,4 +35,4 @@ The client is expected to initiate a websocket handshake by sending a HTTP GET u
 <p align="justify">
 &emsp; As of now, my implementation fetches connection endpoint in case the endpoint isn't configured explicitly by the user inside `XMPPWebsocketConnectionConfiguration`. If user provides websocket URL, we directly move on to sending the HTTP upgrade request as explained earlier in this blog.</p>
 
-<i>That is all for my current progress. Thank you for spending time and reading it!</i><br>
+<i>That is all for my progress as of now. Thank you for spending time and reading it!</i><br>
