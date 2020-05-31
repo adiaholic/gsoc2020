@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Chapter 2: Modular Shift"
+date:   2020-05-24 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hello everyone,<br>
+&emsp; In the previous blog I have mentioned about some work on handshakes. I have used this week to understand Florian's newly introduced Modular Transport Architecture and update my previous progress by introducing Websocket Transport \0/.</p>
+
+<p align="justify">
+&emsp;
+The modular architecture to me looks like a sophisticated approach which suggests that everything in between and beyond entering credentials and succesful authentication is a state. And each of these states are accompanied by state descriptors, serving metadata. And such states are a part of the Finite State Machine.</p>
+
+<p align="justify">
+&emsp;This week I have been able to partially define websocket transport along with the accompanying states and descriptors.</p>
+
+<p align="justify">
+&emsp;At the moment, I am making use of okHttp library to perform ground level websocket operations. Incase in future if we plan to replace okHttp with another websocket implementation, we would easily be able to achieve that through the help of interfaces.</p>
+
+<p align="justify">
+&emsp;This week for me was less about coding and lots and lots of debugging. With every iteration, I was able to understand the module in a better way.
+
+
+<i>That is all for now. See you next week!</i><br>
