@@ -15,7 +15,8 @@ Hello everyone,<br>
 &emsp; As of now, I am able to achieve success SASL authentication. This means that the code snippet actually works,<br>
 
 <code>
-	ModularXmppClientToServerConnection connection = new ModularXmppClientToServerConnection(config);<br>
+	ModularXmppClientToServerConnection connection = <br>
+	&emsp;&emsp;new ModularXmppClientToServerConnection(config);<br>
     connection.connect();<br>
     connection.login();<br>
 </code>
