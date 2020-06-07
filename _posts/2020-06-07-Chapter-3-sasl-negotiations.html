@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "Chapter 3: SASL Negotiations"
+date:   2020-06-07 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hello everyone,<br>
+
+&emsp; This week has been pretty amazing. Prior to GSoC, I had some commits which added support for a particular XEP, but I had always been curious to know what exactly happens under the hood, how these connections are established, etc.</p>
+
+
+<p align="justify">
+&emsp; As of now, I am able to achieve success SASL authentication. This means that the code snippet actually works,<br>
+
+<code>
+	&emsp;&emsp;	ModularXmppClientToServerConnection connection = new ModularXmppClientToServerConnection(config);<br>
+    &emsp;&emsp;    connection.connect();<br>
+    &emsp;&emsp;    connection.login();
+</code>
+</p>
+
+<p align="justify">
+To monitor the course of SASL authentication, I have introduced `WebsocketConnectionPhases`. These phases keep track over status of the connection, right from `attemptingWebsocketHandshakes` till the connection is in phase `exchangingStanzas`.
+</p>
+
+<center>
+    <img src="https://adiaholic.github.io/gsoc2020/assets/images/SaslPhases.png">
+</center>
+<br>
+
+
+<p align="justify">
+&emsp; In the coming week, I would want to make methods more modular to remove redundancy and find a way to make websocket base library pluggable.</p>
+
+<i>That is all for now. See you next week!</i><br>
