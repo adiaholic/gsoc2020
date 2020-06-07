@@ -12,15 +12,15 @@ Hello everyone,<br>
 
 
 <p align="justify">
-&emsp; As of now, I am able to achieve success SASL authentication. This means that the code snippet actually works,<br>
+&emsp; As of now, I am able to achieve success SASL authentication. This means that the code snippet actually works,</p>
 
-<code>
-	ModularXmppClientToServerConnection connection = <br>
-	&emsp;&emsp;new ModularXmppClientToServerConnection(config);<br>
-    connection.connect();<br>
-    connection.login();<br>
-</code>
-</p>
+<pre>
+	<code>
+		ModularXmppClientToServerConnection connection = new ModularXmppClientToServerConnection(config);<br>
+    	connection.connect();<br>
+    	connection.login();<br>
+	</code>
+</pre>	
 
 <p align="justify">
 To monitor the course of SASL authentication, I have introduced `WebsocketConnectionPhases`. These phases keep track over status of the connection, right from `attemptingWebsocketHandshakes` till the connection is in phase `exchangingStanzas`.
