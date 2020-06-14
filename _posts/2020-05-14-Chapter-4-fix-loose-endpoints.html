@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Chapter 4: Fixing loose endpoints"
+date:   2020-06-14 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi,<br>
+
+&emsp; Last week we witnessed successful SASL negotiation and this week I tried to improve code quality. The previously designed Websocket implementation went through 10 phases during handshakes. As pointed by my mentors, I realised that most of the phases involved similar funtions like sending TopLevelStreamElement, sending Open Stream element, etc. Moreover most of the phases were repetitive. Those repetitive phases are squashed together and now I have four phases only. </p>
+
+Those four phases are: <br>
+&emsp;    1) ReadyToSendOpen<br>
+&emsp;    2) OpenFrameSent<br>
+&emsp;    3) ReadyToReceiveFeatures<br>
+&emsp;    4) ExchangingTopLevelStreamElements<br>
+<br>
+
+
+<p align="justify">
+&emsp; Along with this, now I am able to discover remote connection endpoints through the use of XEP-0156. Currently I able to parse metadata only through XML files. It is also possile that servers provide host-meta information in the form of JSON files. This is one part which is yet to be worked upon.</p>
+
+<p align="justify">
+&emsp; I currently am stuck at an unexpected situation. OkHttp is terminating websocket connection with an exception in response to the <presence> stanza sent after SASL auth. The behaviour is quite unexpected. This situation has been tough to tackle because the throwable received doesn't provide any significant information regarding failure of the connection.</p>
+
+<i>This has been my past week. See you in the next blog.</i><br>
