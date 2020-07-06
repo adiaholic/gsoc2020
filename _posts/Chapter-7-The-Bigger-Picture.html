@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Chapter 7: The Bigger Picture"
+date:   2020-07-06 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi,<br>
+
+&emsp; This was the first week of my second work period.</p>
+
+<p align="justify">
+&emsp; This week, I could handle multiple endpoints. Previously, only the first endpoint was being used to make a connection. Now, we check endpoints one-by-one until connection is establised or connections through all endpoints resulted in failure. All these connection failures are wrapped around in a `WebsocketException`.
+</p>
+
+<p align="justify">
+&emsp; Apart from this, some modifications have been made into the code base in accordance with reviews recieved from mentors. I now have a successful build and can generate ModularXmppClientToServerConnectionStateGraph through websocket module pitched into the Finite State Machine(FSM). </p>
+
+<p align="justify">
+Showing the generated FSM:
+<center>
+    <img src="https://adiaholic.github.io/gsoc2020/assets/images/websocket.png">
+    </center>
+    <br>
+</p>
+
+<p align="justify">
+&emsp; 	Furter I am going to work on pluggable implementations and existing code improvisation.
+</p>
+
+<i>Thank you. See you next week.</i><br>
