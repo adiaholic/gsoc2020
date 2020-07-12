@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Chapter 8: Reworking FSM "
+date:   2020-07-12 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi,<br>
+
+&emsp; This week I made some changes required to develop appropriate finite state machine graph. We can now see that `EstablishingWebsocketConnection` is an alternative state to `EstablisingTcpConnection`.</p>
+
+<p align="justify">
+	The corresponding graph is as shown below,
+<center>
+    <img src="https://adiaholic.github.io/gsoc2020/assets/images/websocketAndTcp.png">
+    </center>
+    <br>
+</p>
+
+
+<p align="justify">
+&emsp; Few other significant changes are:
+&emsp;&emsp; The previous `handshake()` method is now `connect()`. And corresponding to it, closingHandshake() is renamed to `disconnect()`.
+&emsp;&emsp; `AbstractWebsocketImpl` is now `AbstractWebsocket`.
+&emsp;&emsp; Have started adding test cases.
+
+</p>
+
+<p align="justify">
+&emsp; Now that we have the websocket codebase in better shape than what it was a few weeks before, I feel that this is the right time to add documentation wherever necessary and also I will start writing test cases.</p>
+
+<i>This was all for this week. Thank you for reading. See you next week.</i><br>
