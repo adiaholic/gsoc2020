@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "Chapter 9: Bug Fixation "
+date:   2020-07-19 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi,<br>
+&emsp; This week wasn't as productive as I was expecting. I ran into a some bugs and attempted to solve them.</p>
+
+
+<p align="justify">
+&emsp; It got weird when my `okHttpWebsocketImpl` started receving `<failure>` stanzas during SASL authentication. I tried diagnosing my past commits in hope that I would be able to track down, where things are going wrong. In the end, I tried setting up the server all over again and found that my previous server was broken. 
+</p>
+
+<p align="justify">
+&emsp; When writing integration tests, I was running into failures when parsing `<iq>` stanzas of type `result`. The form field entities of type `text-multi` were perceived of type type `text-single` since it is the default type incase form field type isn't mentioned. As a result of discussion at xsf muc, we realised that there is indeed a need to mention form field types.</p>
+
+<p align="justify">
+&emsp; Along with this I have put up a minimalistic websocket integration test which only tests connection establishment. Taking a step further, we would want two connections to be able to share data through websocket connections.
+</p>
+
+<i>This was all for this week. Thank you for reading. See you next week.</i><br>
