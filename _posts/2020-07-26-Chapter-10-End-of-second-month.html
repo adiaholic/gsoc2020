@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Chapter 10: End of second month"
+date:   2020-07-26 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi reader,<br>
+&emsp; This is the last post of my second month. To quickly summarise, this month I have worked on my websocket implementation incorporating previous changes improving existing codebase and making few PRs once in a while.</p>
+
+
+<p align="justify">
+&emsp; In this week, I was able to propose a PR for SimpleXmppConnectionIntegrationTest and get it merged. I have added a connection descriptor going by the nickname `modular-websocket` inside Smack's integration test framework. SimpleXmppConnectionIntegrationTest along with modular-descriptor can be used to test the current implementation against a local XMPP server.
+</p>
+
+<p align="justify">
+&emsp; Along with integration tests, some JUnit tests have been added wherever I could. I have tried to include those parts inside JUnit tests which do not undergo I/O operations. And for those parts where I/O operations are performed, my guess is that the SimpleXmppConnectionIntegrationTest should suffice for now.</p>
+
+<p align="justify">
+&emsp; Along with these changes, the code has undergone refactoring as per reviews by my mentors. At the moment, the implementation works as expected. The code now has tools for testing but still lacks documentation. I feel like it is wise to add documentation once the code is close to the mergable state. This was all until now.
+</p>
+
+<p align="justify">
+&emsp; Currently I can imagine 3 prime tasks for my last month,<br>
+&emsp;&emsp;1) Polishing the current implementation.<br>
+&emsp;&emsp;2) Add precise documentation.<br>
+&emsp;&emsp;3) Implement modular architecture in Spark \0/.<br>
+&emsp; 
+</p>
+
+<i>Looking forward to see you in the final phase of GSoC.</i><br>
