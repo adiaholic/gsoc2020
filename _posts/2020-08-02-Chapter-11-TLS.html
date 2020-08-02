@@ -15,9 +15,15 @@ Hi,<br>
 </p>
 
 <p align="justify">
-&emsp;Logging descriptor has been changed significantly and is now moved inside okHttp's dedicated package. It no longer extends okHttp's Interceptor and now depends on SmackDebugger. Even so I am trying to figure out it's my way around debuggers. Improvements have been made to the core class - OkHttpWebsocketImpl, for the closingWebsocket phase.</p>
+&emsp;Logging descriptor has been changed significantly and is now moved inside okHttp's dedicated package. It no longer extends okHttp's Interceptor and now depends on SmackDebugger. Even so I am trying to figure out my way around debuggers. Improvements have been made to the core class - OkHttpWebsocketImpl, for the closingWebsocket phase.</p>
 
 <p align="justify">
+	My most important takeaway of the week,
+<center>
+    <img src="https://adiaholic.github.io/gsoc2020/assets/images/wss_vs_ws.jpg">
+</center>
+    <br>
+    <br>
 &emsp; The websocket subprotocol states that TLS cannot be used at XMPP subprotocol layer instead it should be enabled at at the websocket layer. So whenever, we use an endpoint using `wss` scheme, it refers to an endpoint secured by TLS. This concept has now been realised inside websocket module. When SecurityMode is set to `disabled` it connects only to endpoints with `ws` uri scheme. When SecurityMode is set to `required` connection is established only with endpoints with `wss` uri scheme. Incase we preferrably want to connect to a secure endpoint but are open to establish connection with insecure endpoints if something goes wrong, we can use SecurityMode `if-possible`.
 </p>
 
