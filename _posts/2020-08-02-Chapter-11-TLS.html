@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: post
 title:  "Chapter 11: TLS - The Last Stage"
 date:   2020-08-02 +0530
 author: Aditya Borikar
@@ -21,4 +21,4 @@ Hi,<br>
 &emsp; The websocket subprotocol states that TLS cannot be used at XMPP subprotocol layer instead it should be enabled at at the websocket layer. So whenever, we use an endpoint using `wss` scheme, it refers to an endpoint secured by TLS. This concept has now been realised inside websocket module. When SecurityMode is set to `disabled` it connects only to endpoints with `ws` uri scheme. When SecurityMode is set to `required` connection is established only with endpoints with `wss` uri scheme. Incase we preferrably want to connect to a secure endpoint but are open to establish connection with insecure endpoints if something goes wrong, we can use SecurityMode `if-possible`.
 </p>
 
-<i>This was my first week of the last phase. See you later</i><br>
+<i>This was my first week of the last phase. See you later.</i><br>
