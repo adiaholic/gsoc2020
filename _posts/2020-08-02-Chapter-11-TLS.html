@@ -1,0 +1,24 @@
+---
+layout: 
+title:  "Chapter 11: TLS - The Last Stage"
+date:   2020-08-02 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi,<br>
+&emsp; The primary task I am focussed on currently is to fix any flaw I come across in the code base. This week I came across multiple places where workflow could have been better.</p>
+
+
+<p align="justify">
+&emsp; A tiny but significant change made at the start of this week is the removal of smack-tcp from the websocket module. Remains from previous approach (eg: failureMap inside okHttpWebsocketImpl, not so useful - boolean usingHttp inside transport descriptor) have been removed. Exception descriptions now show meaningful messages instead of `ClassName@someHexNum`. WebsocketRemoteConnectionEndpoints no longer hassle by extracting host, port and scheme from the endpoint obtained through http lookup. Instead WebsocketRemoteConnectionEndpoint conveniently wraps the endpoint inside a URI.
+</p>
+
+<p align="justify">
+&emsp;Logging descriptor has been changed significantly and is now moved inside okHttp's dedicated package. It no longer extends okHttp's Interceptor and now depends on SmackDebugger. Even so I am trying to figure out it's my way around debuggers. Improvements have been made to the core class - OkHttpWebsocketImpl, for the closingWebsocket phase.</p>
+
+<p align="justify">
+&emsp; The websocket subprotocol states that TLS cannot be used at XMPP subprotocol layer instead it should be enabled at at the websocket layer. So whenever, we use an endpoint using `wss` scheme, it refers to an endpoint secured by TLS. This concept has now been realised inside websocket module. When SecurityMode is set to `disabled` it connects only to endpoints with `ws` uri scheme. When SecurityMode is set to `required` connection is established only with endpoints with `wss` uri scheme. Incase we preferrably want to connect to a secure endpoint but are open to establish connection with insecure endpoints if something goes wrong, we can use SecurityMode `if-possible`.
+</p>
+
+<i>This was my first week of the last phase. See you later</i><br>
