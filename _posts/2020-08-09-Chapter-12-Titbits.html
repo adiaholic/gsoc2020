@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Chapter 12: Titbits"
+date:   2020-08-09 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi,<br>
+&emsp; This week I managed to add some titbits to existing codebase.</p>
+
+
+<p align="justify">
+&emsp; In my last post I mentioned that I was still figuring my way with debuggers. This week, I was able to log down incoming and outgoing texts with the help of SmackDebugger. In future I expect to log down pretty xml.
+</p>
+
+<p align="justify">
+&emsp; We can now specify one endpoint for the websocket implementation to connect to. The endpoint has to be configured inside `XmppWebsocketTransportModuleDescriptor`. When a remote endpoint is configured inside descriptor, we can also enable or disbale websocket remote endpoint discovery. By default endpoint discovery mechanism is enabled.
+</p>
+
+<p align="justify">
+&emsp; Improvements can be observed inside OkHttpWebsocketImpl.send(). There now exists much less logic than what existed previously. This improvement no longer realised the need of WebsocketConnectionPhase.ReadyToSendOpen phase. And hence, the phase has been safely removed.
+</p>
+
+<p align="justify">
+&emsp; Recently I started writing unit tests using mockito. I have no experience with the mocking framework but I have managed to write simple tests. It has been fun :)
+</p>
+
+<i>This was my week. See you next week.</i><br>
