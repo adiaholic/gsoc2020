@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Chapter 13: Testing"
+date:   2020-08-09 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi,<br>
+&emsp; It is difficult to test classes performing IO operation using normal JUnit tests. And hence I moved on towards using mockito. Through mockito I was able to add more unit tests which led to an increase in the overall code coverage.</p>
+
+
+<p align="justify">
+&emsp; Another significant improvement is that I was able to remove another WebsocketConnectionPhase, readyToReceiveFeatures from the implementation. This now means that there are only three phases in websocket connection.
+</p>
+
+<p align="justify">
+&emsp; OpenElement and CloseElement from the websocket module now extend StreamOpen and StreamClose respectively. However, this hierarchy is prone to modifications under the newly opened #420.
+</p>
+
+<p align="justify">
+&emsp; After lot of playing with debuggers, I now am able to obtain pretty output for the sent and received data between the client and the server.
+</p>
+
+<i>This was my week. See you next week.</i><br>
