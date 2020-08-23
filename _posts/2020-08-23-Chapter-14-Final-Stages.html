@@ -11,12 +11,11 @@ Hi,<br>
 </p>
 
 <p align="justify">
-&emsp; Some minor changes in the WebsocketTransportModuleDescriptorBuilder APIs have been made, prominenly to be more clear about their functionalities.
-There was a certain race condition while sending outgoing elements, which now has been handled with the help of AsyncButOrdered class. Initially, the websocket interface served as the base for websocket implementation. That architecture predates the introduction of AbstractWebsockets and is no longer required. Hence the APIs from the non existent WebsocketInterface have been safely merged in AbstractWebsocket.
+&emsp; Some minor changes in the WebsocketTransportModuleDescriptorBuilder APIs have been made, prominently to be more descriptive about their functionalities. There was a certain race condition while sending outgoing elements, which now has been handled with the help of AsyncButOrdered class. Initially, the websocket interface served as the base for websocket implementation. That architecture predates the introduction of AbstractWebsockets and is no longer required. Hence the APIs from the non existent WebsocketInterface has been safely merged in AbstractWebsocket.
 </p>
 
 <p align="justify">
-&emsp; By the end of the week I found myself trying to extract SSLSession from OkHttpClient. However, after opting to multiple unpropitious approaches, I realised that the library doesn't easily reveal the SSLSession for a websocket connection. It is possible to obtain sessions for an ordinary http request but not for requests made through websockets. There is a high chance that the developers of OkHttp follow different philosophy in their design which isn't clear to me at the moment. For what it is worth, I was able to tackle the situation by going for a workaround instead of actually trying to obtain SSLSessions.	
+&emsp; By the end of the week I found myself trying to extract SSLSession from OkHttpClient. However, after opting multiple unpropitious approaches, I realised that the library doesn't easily reveal the SSLSession for a websocket connection. It is possible to obtain sessions for an ordinary http request but not for requests made through websockets. There is a high chance that the developers of OkHttp follow different philosophy in their design which isn't clear to me at the moment. For what it is worth, I was able to tackle the situation by going for a workaround instead of actually trying to obtain SSLSessions.	
 </p>
 
-<i>This was my week. See you at the next week.</i><br>
+<i>This was my week. See you later.</i><br>
