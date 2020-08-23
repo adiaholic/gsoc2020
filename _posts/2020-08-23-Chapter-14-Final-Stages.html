@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Chapter 14: Final Stage"
+date:   2020-08-23 +0530
+author: Aditya Borikar
+---
+
+<p align="justify">
+Hi,<br>
+&emsp; This is almost the end of my GSoC journey and so this week I tried to wrap things up with the websocket pull request. But as they say, there is always a scope of improvement. And so, this week more changes were made mainly to incorporate #420, #423 and #424. These PRs are mostly concentrated to make opening and closing streams feasible across different underlying transports.
+</p>
+
+<p align="justify">
+&emsp; Some minor changes in the WebsocketTransportModuleDescriptorBuilder APIs have been made, prominenly to be more clear about their functionalities.
+There was a certain race condition while sending outgoing elements, which now has been handled with the help of AsyncButOrdered class. Initially, the websocket interface served as the base for websocket implementation. That architecture predates the introduction of AbstractWebsockets and is no longer required. Hence the APIs from the non existent WebsocketInterface have been safely merged in AbstractWebsocket.
+</p>
+
+<p align="justify">
+&emsp; By the end of the week I found myself trying to extract SSLSession from OkHttpClient. However, after opting to multiple unpropitious approaches, I realised that the library doesn't easily reveal the SSLSession for a websocket connection. It is possible to obtain sessions for an ordinary http request but not for requests made through websockets. There is a high chance that the developers of OkHttp follow different philosophy in their design which isn't clear to me at the moment. For what it is worth, I was able to tackle the situation by going for a workaround instead of actually trying to obtain SSLSessions.	
+</p>
+
+<i>This was my week. See you at the next week.</i><br>
