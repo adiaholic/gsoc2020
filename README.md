@@ -65,11 +65,12 @@ As it is apparent from the diagram above, we have successfully plugged in Establ
 
 To test Smack's transport against modular architecture, there is now a very simple integration test in place which can be used to transfer a message stanza from user to another. The integration test can be found [here](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db).
 
+Apart from these, I am especially happy about my [first ever contribution](https://github.com/xsf/xeps/commit/b5924b77908d6762345f95d2972169cc3f93c785) to an XEP!
 
 ## Weekly logs
 | Chapter |   Date      | Description  |
 |---------|-------------|--------------|
-|Chapter 0 | 16-05-2020)|[Introduction](https://adiaholic.github.io/gsoc2020/2020/05/16/Chapter-0-Introduction.html) |
+|Chapter 0 | (16-05-2020)|[Introduction](https://adiaholic.github.io/gsoc2020/2020/05/16/Chapter-0-Introduction.html) |
 |Chapter 1 | (24-05-2020)| [Handshake](https://adiaholic.github.io/gsoc2020/2020/05/24/Chapter-1-Handshake.html)|
 |Chapter 2 | (31-05-2020)| [Modular Shift](https://adiaholic.github.io/gsoc2020/2020/05/31/Chapter-2-Modular-Shift.html)|
 |Chapter 3 | (21-06-2020)| [SASL Negotiations](https://adiaholic.github.io/gsoc2020/2020/06/07/Chapter-3-sasl-negotiations.html)|
@@ -87,4 +88,6 @@ To test Smack's transport against modular architecture, there is now a very simp
 
 
 Over the period of past three months, I was exposed to innumerable difficult situations like imperfect timing, choosing unpropitious approach, relying on bad information and various technical frameworks. I however enjoyed tackling these unfavourable scenarios. I was encouraged by my mentors to consume more information and think in the right direction. I loved the dynamic of open source community, the exacting and collective environment helped me function at my best.
+
+## Thanks
 
