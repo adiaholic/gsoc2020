@@ -13,7 +13,7 @@ XMPP protocols are the base protocols for instant messaging and presence. Applic
 
 ## XEP-0156: Discovering Alternative XMPP Connection Methods
 
-The XEP mentions two lookup processes, out of which we use the HTTP Web-host Metadata lookup. Conceptually, the host-meta lookup process used for the WebSocket binding is analogous to the DNS SRV lookup process used for the TCP binding.
+The XEP mentions two lookup processes, out of which we use the HTTP Web-host Metadata lookup. Conceptually, the host-meta lookup process used for the Websocket binding is analogous to the DNS SRV lookup process used for the TCP binding.
 
 ### The process can be divided into two steps:
 
@@ -26,13 +26,13 @@ The XEP mentions two lookup processes, out of which we use the HTTP Web-host Met
 	<XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0'>
          	<Link rel="urn:xmpp:alt-connections:websocket" href="wss://im.example.org:443/ws" />
        </XRD>
-       ```
+       
 
 To obtain a websocket endpoint we look for the hyperlink reference corresponding to the link relation "urn:xmpp:alt-connections:websocket".
 
 The implementation can be found [here](https://github.com/igniterealtime/Smack/commit/dcb66eef592bf3959a3aaafae0802e0b35500e2d).
 
-## Finite State Machine of Smack's Modular Architecture
+## New Finite State Machine of Smack's Modular Architecture
 
 <center>
     <img src="https://adiaholic.github.io/gsoc2020/assets/images/websocketAndTcp.png">
@@ -64,24 +64,24 @@ As it is apparent from the diagram above, we have successfully plugged in Establ
 ** [Introduce websocket module into smack]()
 
 
-## Timeline
-| Date                 | Description  |
-|----------------------|--------------|
-|Chapter 0<br>(16-05-2020)|[Introduction](https://adiaholic.github.io/gsoc2020/2020/05/16/Chapter-0-Introduction.html) |
-|Chapter 1<br>(24-05-2020)| [Handshake](https://adiaholic.github.io/gsoc2020/2020/05/24/Chapter-1-Handshake.html)|
-|Chapter 2<br>(31-05-2020)| [Modular Shift](https://adiaholic.github.io/gsoc2020/2020/05/31/Chapter-2-Modular-Shift.html)|
-|Chapter 3<br>(21-06-2020)| [SASL Negotiations](https://adiaholic.github.io/gsoc2020/2020/06/07/Chapter-3-sasl-negotiations.html)|
-|Chapter 4<br>(28-06-2020)| [Fixing loose endpoints](https://adiaholic.github.io/gsoc2020/2020/06/14/Chapter-4-fix-loose-endpoints.html)|
-|Chapter 5<br>(05-07-2020)| [Discrete Http lookup method](https://adiaholic.github.io/gsoc2020/2020/06/21/Chapter-5-Discrete-Http-Lookup-Method.html)|
-|Chapter 6<br>(12-07-2020)| [A part of the whole, merged](https://adiaholic.github.io/gsoc2020/2020/06/28/Chapter-6-Part-Of-The-Whole.html)|
-|Chapter 7<br>(19-07-2020)| [The Bigger Picture](https://adiaholic.github.io/gsoc2020/2020/07/06/Chapter-7-The-Bigger-Picture.html)|
-|Chapter 8<br>(26-07-2020)| [Reworking FSM](https://adiaholic.github.io/gsoc2020/2020/07/12/Chapter-8-Reworking-FSM.html)|
-|Chapter 9<br>(02-08-2020)| [Bug fixation](https://adiaholic.github.io/gsoc2020/2020/07/19/Chapter-9-Fixing-Bugs.html)|
-|Chapter 10<br>(09-08-2020)| [End of the second phase](https://adiaholic.github.io/gsoc2020/2020/07/26/Chapter-10-End-of-second-phase.html)|
-|Chapter 11<br>(16-08-2020)| [TLS: The Last Stage](https://adiaholic.github.io/gsoc2020/2020/08/02/Chapter-11-TLS.html)|
-|Chapter 12<br>(23-08-2020)| [Titbits](https://adiaholic.github.io/gsoc2020/2020/08/09/Chapter-12-Titbits.html)|
-|Chapter 13<br>(16-08-2020)| [Testing](https://adiaholic.github.io/gsoc2020/2020/08/16/Chapter-13-Testing.html)|
-|Chapter 14<br>(23-08-2020)| [Final Stage](https://adiaholic.github.io/gsoc2020/2020/08/23/Chapter-14-Final-Stages.html)|
+## Weekly logs
+| Chapter |   Date      | Description  |
+|---------|-------------|--------------|
+|Chapter 0 | 16-05-2020)|[Introduction](https://adiaholic.github.io/gsoc2020/2020/05/16/Chapter-0-Introduction.html) |
+|Chapter 1 | (24-05-2020)| [Handshake](https://adiaholic.github.io/gsoc2020/2020/05/24/Chapter-1-Handshake.html)|
+|Chapter 2 | (31-05-2020)| [Modular Shift](https://adiaholic.github.io/gsoc2020/2020/05/31/Chapter-2-Modular-Shift.html)|
+|Chapter 3 | (21-06-2020)| [SASL Negotiations](https://adiaholic.github.io/gsoc2020/2020/06/07/Chapter-3-sasl-negotiations.html)|
+|Chapter 4 | (28-06-2020)| [Fixing loose endpoints](https://adiaholic.github.io/gsoc2020/2020/06/14/Chapter-4-fix-loose-endpoints.html)|
+|Chapter 5 | (05-07-2020)| [Discrete Http lookup method](https://adiaholic.github.io/gsoc2020/2020/06/21/Chapter-5-Discrete-Http-Lookup-Method.html)|
+|Chapter 6 | (12-07-2020)| [A part of the whole, merged](https://adiaholic.github.io/gsoc2020/2020/06/28/Chapter-6-Part-Of-The-Whole.html)|
+|Chapter 7 | (19-07-2020)| [The Bigger Picture](https://adiaholic.github.io/gsoc2020/2020/07/06/Chapter-7-The-Bigger-Picture.html)|
+|Chapter 8 | (26-07-2020)| [Reworking FSM](https://adiaholic.github.io/gsoc2020/2020/07/12/Chapter-8-Reworking-FSM.html)|
+|Chapter 9 | (02-08-2020)| [Bug fixation](https://adiaholic.github.io/gsoc2020/2020/07/19/Chapter-9-Fixing-Bugs.html)|
+|Chapter 10 | (09-08-2020)| [End of the second phase](https://adiaholic.github.io/gsoc2020/2020/07/26/Chapter-10-End-of-second-phase.html)|
+|Chapter 11 | (16-08-2020)| [TLS: The Last Stage](https://adiaholic.github.io/gsoc2020/2020/08/02/Chapter-11-TLS.html)|
+|Chapter 12 | (23-08-2020)| [Titbits](https://adiaholic.github.io/gsoc2020/2020/08/09/Chapter-12-Titbits.html)|
+|Chapter 13 | (16-08-2020)| [Testing](https://adiaholic.github.io/gsoc2020/2020/08/16/Chapter-13-Testing.html)|
+|Chapter 14 | (23-08-2020)| [Final Stage](https://adiaholic.github.io/gsoc2020/2020/08/23/Chapter-14-Final-Stages.html)|
 
 
 Over the period of past three months, I was exposed to innumerable difficult situations like imperfect timing, choosing unpropitious approach, relying on bad information and various technical frameworks. I however enjoyed tackling these unfavourable scenarios. I was encouraged by my mentors to consume more information and think in the right direction. I loved the dynamic of open source community, the exacting and collective environment helped me function at my best.
