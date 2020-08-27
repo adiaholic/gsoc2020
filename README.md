@@ -24,13 +24,17 @@ The XEP mentions two lookup processes, out of which we use the HTTP Web-host Met
 
 	```xml
 	<XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0'>
-         	<Link rel="urn:xmpp:alt-connections:websocket" href="wss://im.example.org:443/ws" />
-       </XRD>
+	    <Link rel="urn:xmpp:alt-connections:websocket" href="wss://im.example.org:443/ws" />
+	</XRD>
        
 
 To obtain a websocket endpoint we look for the hyperlink reference corresponding to the link relation "urn:xmpp:alt-connections:websocket".
 
 The implementation can be found [here](https://github.com/igniterealtime/Smack/commit/dcb66eef592bf3959a3aaafae0802e0b35500e2d).
+
+During the second month of GSoC, I put up a very simple integration test to be used to check the transfer of message stanza from user to another. The integration test can be found [here](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db).
+
+
 
 ## New Finite State Machine of Smack's Modular Architecture
 
@@ -43,13 +47,7 @@ As it is apparent from the diagram above, we have successfully plugged in Establ
 
 ## Commits made:
 
-** [Add support for Http Lookup method through XEP-0156](https://github.com/igniterealtime/Smack/commit/dcb66eef592bf3959a3aaafae0802e0b35500e2d)
-
 ** [Remove unrequired assignment of value to connectionEndpoint variable](https://github.com/igniterealtime/Smack/commit/45f75d5ce0dcb4e8c68ea59109211dda8799565f)
-
-** [Add simple XMPP connection integration test](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db)
-
-** [Position parser at START_ELEMENT before parsing](https://github.com/igniterealtime/Smack/commit/7796b367cc779a001a42c7313bbdaf5f50c325b6)
 
 ** [XmlEnvironment: Use correct method to obtain effective namespace.](https://github.com/igniterealtime/Smack/commit/c9cf4f15419be5a20bb7a046facfb664b0141f38)
 
