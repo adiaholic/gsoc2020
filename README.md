@@ -11,11 +11,33 @@
 
 XMPP protocols are the base protocols for instant messaging and presence. Applications using XMPP make use of either of the three transports: TCP, Bidirectional-streams Over Synchronous(BOSH) and websocket transport. Smack already has support for TCP and BOSH based connections. And my job was to add websocket support to Smack.
 
+## XEP-0156: Discovering Alternative XMPP Connection Methods
+
+The XEP mentions two lookup processes, out of which we use the HTTP Web-host Metadata lookup. Conceptually, the host-meta lookup process used for the WebSocket binding is analogous to the DNS SRV lookup process used for the TCP binding.
+
+### The process can be divided into two steps:
+
+1) Send a request over secure HTTP to the path
+   "/.well-known/host-meta" at an HTTP origin that matches the XMPP service domain (e.g., a URL of "https://im.example.org/.well-known/host-meta" if the XMPP service domain is "im.example.org").
+
+2) Retrieve a host-meta document specifying a link relation type of "urn:xmpp:alt-connections:websocket", such as: 
+
+	<XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0'>
+         	<Link rel="urn:xmpp:alt-connections:websocket" href="wss://im.example.org:443/ws" />
+       </XRD>
+
+To obtain a websocket endpoint we look for the hyperlink reference corresponding to the link relation "urn:xmpp:alt-connections:websocket".
+
+The implementation can be found [here](https://github.com/igniterealtime/Smack/commit/dcb66eef592bf3959a3aaafae0802e0b35500e2d).
+
 ## Finite State Machine of Smack's Modular Architecture
 
 <center>
     <img src="https://adiaholic.github.io/gsoc2020/assets/images/websocketAndTcp.png">
 </center>
+
+As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture.
+
 
 ## Commits made:
 
