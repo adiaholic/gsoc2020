@@ -36,7 +36,6 @@ There is a significant difference in the stream opening and closing elements bet
 
 A typical tcp stream open element is like,
 
-	```xml
 	<stream:stream
 		from='juliet@im.example.com'
 		to='im.example.com'
@@ -48,7 +47,6 @@ A typical tcp stream open element is like,
 
 whereas a websocket stream open element is,
 
-	```xml
 	<open xmlns="urn:ietf:params:xml:ns:xmpp-framing"
 		to="example.com"
 		version="1.0" />
