@@ -35,20 +35,25 @@ To obtain a websocket endpoint we look for the hyperlink reference corresponding
 There is a significant difference in the stream opening and closing elements between TCP connections and websocket based connections.
 
 A typical tcp stream open element is like,
+
 	```xml
 	<stream:stream
-          from='juliet@im.example.com'
-          to='im.example.com'
-          version='1.0'
-          xml:lang='en'
-          xmlns='jabber:client'
-          xmlns:stream='http://etherx.jabber.org/streams'>
+		from='juliet@im.example.com'
+		to='im.example.com'
+		version='1.0'
+		xml:lang='en'
+		xmlns='jabber:client'
+		xmlns:stream='http://etherx.jabber.org/streams'>
+
 
 whereas a websocket stream open element is,
+
 	```xml
 	<open xmlns="urn:ietf:params:xml:ns:xmpp-framing"
-             to="example.com"
-             version="1.0" />
+		to="example.com"
+		version="1.0" />
+
+
 
 This means that these elements are supposed to be transport specific and that Smack should take care of that. To solve this problem, Smack now uses StreamOpenAndCloseFactory. This change along with a few relevant changes can be found [here](https://github.com/igniterealtime/Smack/commit/0e49adff1d4d88359c3a0c2c2d60efdfc31677e8), [here](https://github.com/igniterealtime/Smack/commit/9fcc97836bf5bb8fb788dc44675bf4e5f50e6f25) and [here](https://github.com/igniterealtime/Smack/commit/648a1cfab1f69f9b00070182d55142d3d0f35965)!
 
