@@ -20,15 +20,25 @@ XMPP protocols are the base protocols for instant messaging and presence. Applic
 ## Commits made:
 
 [Add support for Http Lookup method through XEP-0156](https://github.com/igniterealtime/Smack/commit/dcb66eef592bf3959a3aaafae0802e0b35500e2d)
+
 [Remove unrequired assignment of value to connectionEndpoint variable](https://github.com/igniterealtime/Smack/commit/45f75d5ce0dcb4e8c68ea59109211dda8799565f)
+
 [Add simple XMPP connection integration test](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db)
+
 [Position parser at START_ELEMENT before parsing](https://github.com/igniterealtime/Smack/commit/7796b367cc779a001a42c7313bbdaf5f50c325b6)
+
 [XmlEnvironment: Use correct method to obtain effective namespace.](https://github.com/igniterealtime/Smack/commit/c9cf4f15419be5a20bb7a046facfb664b0141f38)
+
 [Introduce AbstractStreamOpen and AbstractStreamClose](https://github.com/igniterealtime/Smack/commit/9fcc97836bf5bb8fb788dc44675bf4e5f50e6f25)
+
 [Introduce StreamOpenAndCloseFactory for modular architecture](https://github.com/igniterealtime/Smack/commit/0e49adff1d4d88359c3a0c2c2d60efdfc31677e8)
+
 [Make ModularXmppClientToServerConnectionConfiguration.addModule() public](https://github.com/igniterealtime/Smack/commit/db385e6595d02b95ce0c221e718780a8ee59fc89)
+
 [Use AbstractStreamOpen instead of StreamOpen to open stream](https://github.com/igniterealtime/Smack/commit/648a1cfab1f69f9b00070182d55142d3d0f35965)
+
 [Introduce websocket module into smack]()
+
 
 ## Timeline
 | Date                 | Description  |
