@@ -4,7 +4,7 @@
 
 * **Student:** Aditya Borikar
 * **Mentors:** Florian Schmaus, Paul Schaub
-* **Organisation:** XMPP Standards Foundation
+* **Umbrella-Organisation:** XMPP Standards Foundation
 * **Sub-Organisation:** Ignite Realtime
 
 ### Welcome to my GSoC 2020 project page.
@@ -28,13 +28,29 @@ The XEP mentions two lookup processes, out of which we use the HTTP Web-host Met
 	</XRD>
        
 
-To obtain a websocket endpoint we look for the hyperlink reference corresponding to the link relation "urn:xmpp:alt-connections:websocket".
+To obtain a websocket endpoint we look for the hyperlink reference corresponding to the link relation "urn:xmpp:alt-connections:websocket". The implementation for http lookup can be found [here](https://github.com/igniterealtime/Smack/commit/dcb66eef592bf3959a3aaafae0802e0b35500e2d).
 
-The implementation can be found [here](https://github.com/igniterealtime/Smack/commit/dcb66eef592bf3959a3aaafae0802e0b35500e2d).
+## Modular refinements
 
-During the second month of GSoC, I put up a very simple integration test to be used to check the transfer of message stanza from user to another. The integration test can be found [here](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db).
+There is a significant difference in the stream opening and closing elements between TCP connections and websocket based connections.
 
+A typical tcp stream open element is like,
+	```xml
+	<stream:stream
+          from='juliet@im.example.com'
+          to='im.example.com'
+          version='1.0'
+          xml:lang='en'
+          xmlns='jabber:client'
+          xmlns:stream='http://etherx.jabber.org/streams'>
 
+whereas a websocket stream open element is,
+	```xml
+	<open xmlns="urn:ietf:params:xml:ns:xmpp-framing"
+             to="example.com"
+             version="1.0" />
+
+This means that these elements are supposed to be transport specific and that Smack should take care of that. To solve this problem, Smack now uses StreamOpenAndCloseFactory. This change along with a few relevant changes can be found [here](https://github.com/igniterealtime/Smack/commit/0e49adff1d4d88359c3a0c2c2d60efdfc31677e8), [here](https://github.com/igniterealtime/Smack/commit/9fcc97836bf5bb8fb788dc44675bf4e5f50e6f25) and [here](https://github.com/igniterealtime/Smack/commit/648a1cfab1f69f9b00070182d55142d3d0f35965)!
 
 ## New Finite State Machine of Smack's Modular Architecture
 
@@ -44,22 +60,7 @@ During the second month of GSoC, I put up a very simple integration test to be u
 
 As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture.
 
-
-## Commits made:
-
-** [Remove unrequired assignment of value to connectionEndpoint variable](https://github.com/igniterealtime/Smack/commit/45f75d5ce0dcb4e8c68ea59109211dda8799565f)
-
-** [XmlEnvironment: Use correct method to obtain effective namespace.](https://github.com/igniterealtime/Smack/commit/c9cf4f15419be5a20bb7a046facfb664b0141f38)
-
-** [Introduce AbstractStreamOpen and AbstractStreamClose](https://github.com/igniterealtime/Smack/commit/9fcc97836bf5bb8fb788dc44675bf4e5f50e6f25)
-
-** [Introduce StreamOpenAndCloseFactory for modular architecture](https://github.com/igniterealtime/Smack/commit/0e49adff1d4d88359c3a0c2c2d60efdfc31677e8)
-
-** [Make ModularXmppClientToServerConnectionConfiguration.addModule() public](https://github.com/igniterealtime/Smack/commit/db385e6595d02b95ce0c221e718780a8ee59fc89)
-
-** [Use AbstractStreamOpen instead of StreamOpen to open stream](https://github.com/igniterealtime/Smack/commit/648a1cfab1f69f9b00070182d55142d3d0f35965)
-
-** [Introduce websocket module into smack]()
+To test Smack's transport against modular architecture, there is now a very simple integration test in place which can be used to transfer a message stanza from user to another. The integration test can be found [here](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db).
 
 
 ## Weekly logs
