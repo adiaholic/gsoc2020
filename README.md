@@ -7,9 +7,15 @@
 * **Organisation:** XMPP Standards Foundation
 * **Sub-Organisation:** Ignite Realtime
 
-## Introduction
+#### Welcome to the page of my GSoC 2020 project.
 
-XMPP RFCs and Specifications define connection establishment over TCP, BOSH and websockets. Smack currently establishes connection between Server and Client using TCP and BOSH. BOSH suffers from high transport overhead as compared to TCP. Also various issues with long polling are suggested to have an impact upon BOSH based systems [RFC 6202 Section 2.2]. WebSocket provides an alternative to the limitation of inefficient communication between the server and the client by providing bi-directional, full-duplex, real-time client/server communications. The protocol consists of an opening handshake followed by basic message framing, layered over TCP [RFC 6455]. Adding WebSocket support to Smack will allow it to establish a continuous Client-Server connection with less overhead.
+XMPP protocols are the base protocols for instant messaging and presence. Applications using XMPP make use of either of the three transports: TCP, Bidirectional-streams Over Synchronous(BOSH) and websocket transport. Smack already has support for TCP and BOSH based connections. And my job was to add websocket support to Smack.
+
+## Finite State Machine of Smack's Modular Architecture
+
+<center>
+    <img src="https://adiaholic.github.io/gsoc2020/assets/images/websocketAndTcp.png">
+</center>
 
 
 ## Timeline
@@ -30,4 +36,7 @@ XMPP RFCs and Specifications define connection establishment over TCP, BOSH and 
 |Chapter 12<br>(23-08-2020)| [Titbits](https://adiaholic.github.io/gsoc2020/2020/08/09/Chapter-12-Titbits.html)|
 |Chapter 13<br>(16-08-2020)| [Testing](https://adiaholic.github.io/gsoc2020/2020/08/16/Chapter-13-Testing.html)|
 |Chapter 14<br>(23-08-2020)| [Final Stage](https://adiaholic.github.io/gsoc2020/2020/08/23/Chapter-14-Final-Stages.html)|
+
+
+Over the period of past three months, I was exposed to innumerable difficult situations like imperfect timing, choosing unpropitious approach, relying on bad information and various technical frameworks. I however enjoyed tackling these unfavourable scenarios. I was encouraged by my mentors to consume more information and think in the right direction. I loved the dynamic of open source community, the exacting and collective environment helped me function at my best.
 
