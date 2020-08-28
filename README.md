@@ -9,11 +9,11 @@
 
 ### Welcome to my GSoC 2020 project page.
 
-XMPP protocols are the base protocols for instant messaging and presence. Applications using XMPP make use of either of the three transports: TCP, Bidirectional-streams Over Synchronous(BOSH) and websocket transport. Smack already has support for TCP and BOSH based connections. And my job was to add websocket support to Smack.
+XMPP protocols are the base protocols for instant messaging and presence. It stands for eXtensible Messaging and Presence Protocol. Applications using XMPP make use of either of the three transports: TCP, Bidirectional-streams Over Synchronous(BOSH) and websocket transport. Smack already has support for TCP and BOSH based connections. And my job was to add websocket support to Smack.
 
 ## XEP-0156: Discovering Alternative XMPP Connection Methods
 
-The XEP mentions two lookup processes, out of which we use the HTTP Web-host Metadata lookup. Conceptually, the host-meta lookup process used for the Websocket binding is analogous to the DNS SRV lookup process used for the TCP binding.
+The XEP mentions two lookup processes, out of which we use the HTTP Web-host Metadata lookup for fetching websocket endpoints. Conceptually, the host-meta lookup process used for the Websocket binding is analogous to the DNS SRV lookup process used for the TCP binding.
 
 ### The process can be divided into two steps:
 
