@@ -58,7 +58,7 @@ This means that these elements are supposed to be transport specific and that Sm
 ## New Finite State Machine of Smack's Modular Architecture
 
 <center>
-    <img src="https://adiaholic.github.io/gsoc2020/assets/images/websocketAndTcp.png">
+    <img src="https://adiaholic.github.io/GSOC2020/assets/images/websocketAndTcp.png">
 </center>
 
 As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture.
