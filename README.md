@@ -22,7 +22,7 @@ The XEP mentions two lookup processes, out of which we use the HTTP Web-host Met
 
 2) Retrieve a host-meta document specifying a link relation type of "urn:xmpp:alt-connections:websocket", such as: 
 
-	```xml
+
 	<XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0'>
 	    <Link rel="urn:xmpp:alt-connections:websocket" href="wss://im.example.org:443/ws" />
 	</XRD>
