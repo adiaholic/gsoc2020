@@ -61,7 +61,7 @@ This means that these stream elements are supposed to be transport specific and 
     <img src="https://adiaholic.github.io/GSOC2020/assets/images/websocketAndTcp.png">
 </center>
 
-As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture. This implementation resides inside the smack-websocket module and can be found [here](https://github.com/igniterealtime/Smack/pull/399).
+As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture. This implementation resides inside the <b>smack-websocket<b> module and can be found [here](https://github.com/igniterealtime/Smack/pull/399).
 
 The use case for establishing a websocket connection can be found inside [smack-repl]().
 
