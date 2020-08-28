@@ -9,7 +9,7 @@
 
 ### Welcome to my GSoC 2020 project page.
 
-XMPP protocols are the base protocols for instant messaging and presence. It stands for eXtensible Messaging and Presence Protocol. Applications using XMPP make use of either of the three transports: TCP, Bidirectional-streams Over Synchronous(BOSH) and websocket transport. Smack already has support for TCP and BOSH based connections. And my job was to add websocket support to Smack.
+XMPP protocols are the base protocols for instant messaging and presence. It stands for eXtensible Messaging and Presence Protocol. Applications using XMPP make use of either of the three transports: TCP, Bidirectional-streams Over Synchronous(BOSH) and websocket transport. Ignite Realtime's Smack already has support for TCP and BOSH based connections. And my job was to add websocket support to Smack.
 
 ## XEP-0156: Discovering Alternative XMPP Connection Methods
 
@@ -53,21 +53,26 @@ whereas a websocket stream open element is,
 
 
 
-This means that these elements are supposed to be transport specific and that Smack should take care of that. To solve this problem, Smack now uses StreamOpenAndCloseFactory. This change along with a few relevant changes can be found [here](https://github.com/igniterealtime/Smack/commit/0e49adff1d4d88359c3a0c2c2d60efdfc31677e8), [here](https://github.com/igniterealtime/Smack/commit/9fcc97836bf5bb8fb788dc44675bf4e5f50e6f25) and [here](https://github.com/igniterealtime/Smack/commit/648a1cfab1f69f9b00070182d55142d3d0f35965)!
+This means that these stream elements are supposed to be transport specific and that Smack should take care of that. To solve this problem, Smack now uses StreamOpenAndCloseFactory. This change along with a few relevant changes can be found [here](https://github.com/igniterealtime/Smack/commit/0e49adff1d4d88359c3a0c2c2d60efdfc31677e8), [here](https://github.com/igniterealtime/Smack/commit/9fcc97836bf5bb8fb788dc44675bf4e5f50e6f25) and [here](https://github.com/igniterealtime/Smack/commit/648a1cfab1f69f9b00070182d55142d3d0f35965)!
 
-## New Finite State Machine of Smack's Modular Architecture
+## Current Finite State Machine of Smack's Modular Architecture
 
 <center>
     <img src="https://adiaholic.github.io/GSOC2020/assets/images/websocketAndTcp.png">
 </center>
 
-As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture.
+As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture. This implementation resides inside the smack-websocket module and can be found [here](https://github.com/igniterealtime/Smack/pull/399).
 
 The use case for establishing a websocket connection can be found inside [smack-repl]().
 
 To test Smack's transport against modular architecture, there is now a very simple integration test in place which can be used to transfer a message stanza from user to another. The integration test can be found [here](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db).
 
 Apart from these, I am especially happy about my [first ever contribution](https://github.com/xsf/xeps/commit/b5924b77908d6762345f95d2972169cc3f93c785) to an XEP!
+
+### What more can be expected ahead
+
+The websocket implementation is yet to be incorporated into Spark. This also means that Spark is unaware of Smack's modular architecture. Since the modular architecture itself is quite new, while working on Spark we might discover cases which are yet to be considered. Along with that, smack-websocket is prone to improvements as and when realised.
+
 
 ## Thanks
 
