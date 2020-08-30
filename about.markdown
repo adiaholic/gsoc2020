@@ -1,6 +1,6 @@
 ---
 redirect: https://adiaholic.github.io/
-layout: page
+layout: redirect
 title: About
 permalink: /about/
 author: Aditya Borikar
