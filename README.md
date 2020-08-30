@@ -9,7 +9,9 @@
 
 ### Welcome to my GSoC 2020 project page.
 
-XMPP protocols are the base protocols for instant messaging and presence. It stands for eXtensible Messaging and Presence Protocol. Applications using XMPP make use of either of the three transports: TCP, Bidirectional-streams Over Synchronous(BOSH) and websocket transport. Ignite Realtime's Smack already has support for TCP and BOSH based connections. And my job was to add websocket support to Smack.
+XMPP protocols are the base protocols for instant messaging and presence. It stands for eXtensible Messaging and Presence Protocol. Applications using XMPP make use of either of the three transports: TCP, Bidirectional-streams Over Synchronous HTTP (BOSH) and websocket transport. Ignite Realtime's Smack already has support for TCP and BOSH based connections. And my job was to add websocket support to Smack.
+
+XMPP on web through BOSH faces issues like long polling. The WebSocket protocol enables two-way communication between a client and a server, using TCP at the application layer. So in a way, the websocket transport uses the goodness of TCP and overcomes the issues which are seen in BOSH. However, the information shared between resources is still the same, the only difference will be in the underlying transport. Use of websockets support browser based clients.
 
 ## XEP-0156: Discovering Alternative XMPP Connection Methods
 
