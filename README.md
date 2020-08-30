@@ -58,7 +58,7 @@ This means that these stream elements are supposed to be transport specific and 
 ## Current Finite State Machine of Smack's Modular Architecture
 
 <center>
-    <img src="https://adiaholic.github.io/GSOC2020/assets/images/websocketAndTcp.png">
+    <img src="https://adiaholic.github.io/gsoc2020/assets/images/websocketAndTcp.png">
 </center>
 
 As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture. This implementation resides inside the <b>smack-websocket</b> module and the commit can be found [here](https://github.com/igniterealtime/Smack/commit/7ed29b9d5f41e9c8542ad47567e11ae1aaba0c66).
