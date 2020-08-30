@@ -69,7 +69,7 @@ The use case for establishing a websocket connection can be found inside [smack-
 
 To test Smack's transport against modular architecture, there is now a very simple integration test in place which can be used to transfer a message stanza from user to another. The integration test can be found [here](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db).
 
-Apart from these, I am especially happy about my [first ever contribution](https://github.com/xsf/xeps/commit/b5924b77908d6762345f95d2972169cc3f93c785) to an XEP! Here, I improved the abstract of XEP-0156. Previously the abstract suggested that the XEP defines only one format for use in discovering alternative methods to connect to an XMPP server. However, it clearly describes two ways for the same. Now the abstract properly sums up the content of the XEP.
+Apart from these, I am especially happy about my [first ever contribution](https://github.com/xsf/xeps/commit/b5924b77908d6762345f95d2972169cc3f93c785) to an XEP! Here, I improved the abstract of XEP-0156. Previously it suggested that the XEP defines only one format for use in discovering alternative methods to connect to an XMPP server although there clearly are two ways for the same. Now the abstract properly sums up the content of the XEP.
 
 ### What more can be expected ahead
 
