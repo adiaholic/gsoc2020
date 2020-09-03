@@ -65,7 +65,7 @@ This means that these stream elements are supposed to be transport specific and 
 
 As it is apparent from the diagram above, we have successfully plugged in EstablishingWebsocketConnection phase inside Smack's modular architecture. This implementation resides inside the <b>smack-websocket</b> module and the commit can be found [here](https://github.com/igniterealtime/Smack/commit/7ed29b9d5f41e9c8542ad47567e11ae1aaba0c66).
 
-The use case for establishing a websocket connection can be found inside [smack-repl](https://github.com/igniterealtime/Smack/blob/master/smack-repl/src/main/java/org/igniterealtime/smack/smackrepl/WebsocketConnection.java).
+The use case for establishing a websocket connection can be found inside [smack-repl](https://github.com/igniterealtime/Smack/blob/master/smack-repl/src/main/java/org/igniterealtime/smack/smackrepl/WebSocketConnection.java).
 
 To test Smack's transport against modular architecture, there is now a very simple integration test in place which can be used to transfer a message stanza from user to another. The integration test can be found [here](https://github.com/igniterealtime/Smack/commit/fcaeca48ec0eb3848c51ee778ce3626b06c9b7db).
 
